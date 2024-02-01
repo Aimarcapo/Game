@@ -379,6 +379,7 @@
 "Assets/2.Script/Effects/Blink.cs"
 "Assets/2.Script/EnemyScript/Enemy.cs"
 "Assets/2.Script/EnemyScript/EnemyHealth.cs"
+"Assets/2.Script/EnemyScript/EnemyMovement.cs"
 "Assets/2.Script/Player/PlayerController.cs"
 "Assets/2.Script/Player/PlayerHealth.cs"
 "Assets/2.Script/Player/WeaponScript.cs"

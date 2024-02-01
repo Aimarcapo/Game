@@ -24,15 +24,20 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, whatIsGround);
         if (isGrounded)
         {
+            
             animator.SetBool("Jump", false);
+            Attack();
         }
         else
         {
-            animator.SetBool("Jump", true);
-        }
-        FlipCharacter();
+          
+                animator.SetBool("Jump", true);
+            JumpAttack();
 
-        Attack();
+        }
+        JumpAttack();
+        FlipCharacter();
+       
     }
 
     private void FixedUpdate()
@@ -65,7 +70,21 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight + 1f);
         }
     }
+    public void JumpAttack()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //Attack();
+           
+            animator.SetBool("JumpAttack", true);
+        }
+        else
+        {
+            animator.SetBool("JumpAttack", false);
 
+        }
+
+    }
     public void Movement()
     {
         velX = Input.GetAxisRaw("Horizontal");
