@@ -24,20 +24,20 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, whatIsGround);
         if (isGrounded)
         {
-            
+
             animator.SetBool("Jump", false);
             Attack();
         }
         else
         {
-          
-                animator.SetBool("Jump", true);
+
+            animator.SetBool("Jump", true);
             JumpAttack();
 
         }
         JumpAttack();
         FlipCharacter();
-       
+
     }
 
     private void FixedUpdate()
@@ -49,33 +49,34 @@ public class PlayerController : MonoBehaviour
     public void Attack()
     {
         // Si está en el aire, cancelar la animación de salto y poner la de ataque.
-        if(Input.GetButtonDown("Fire1") )
+        if (Input.GetButtonDown("Fire1") || Input.GetButton("Fire1"))
         {
             //Attack();
-           
+
             animator.SetBool("Attack", true);
         }
         else
         {
             animator.SetBool("Attack", false);
-            
+
         }
 
     }
 
     public void Jump()
     {
-        if (Input.GetButton("Jump") && isGrounded)
+        if ((Input.GetButton("Jump") || Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow)) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight + 1f);
         }
     }
+
     public void JumpAttack()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             //Attack();
-           
+
             animator.SetBool("JumpAttack", true);
         }
         else

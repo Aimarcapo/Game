@@ -27,16 +27,16 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthImg.fillAmount = health/maxHealth;
-        if(health>maxHealth)
+        healthImg.fillAmount = health / maxHealth;
+        if (health > maxHealth)
         {
             health = maxHealth;
         }
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy")&& !isInmune)
+        if (collision.CompareTag("Enemy") && !isInmune)
         {
             health -= collision.GetComponent<Enemy>().damageToGive;
             if (collision.transform.position.x < transform.position.x)
@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
                 rigidbody2D.AddForce(new Vector2(-knockbackForceX, knockbackForceY), ForceMode2D.Force);
             }
             StartCoroutine(Inmunity());
-            if(health <=0)
+            if (health <= 0)
             {
                 //Pantalla de game over
                 print("player dead");
@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
     }
     IEnumerator Inmunity()
     {
-        isInmune= true;
+        isInmune = true;
         sprite.material = material.blink;
         yield return new WaitForSeconds(inmunityTime);
         sprite.material = material.original;
