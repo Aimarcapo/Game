@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Heart : MonoBehaviour
 {
     public Text heartText;
-    public int heartsAmount;
+    public int heartsAmount=0;
     public static Heart instance;
     private void Awake()
     {

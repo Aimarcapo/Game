@@ -49,13 +49,13 @@ public class EnemyMovement : MonoBehaviour
         if (isStatic)
         {
             anim.SetBool("Idle", true);
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+          //  rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
         if (isWalking)
         {
 
 
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             anim.SetBool("Idle", false);
             if (!walksRight)
             {

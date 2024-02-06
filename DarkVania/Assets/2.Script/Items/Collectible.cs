@@ -9,7 +9,7 @@ public class Collectible : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(heartsToGive);
+           // Debug.Log(heartsToGive);
             
       
             

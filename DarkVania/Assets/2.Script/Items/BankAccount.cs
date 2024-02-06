@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class BankAccount : MonoBehaviour
 {
-    public float bank;
+    public float bank=0;
     public Text bankText;
 
     public static BankAccount instance;
